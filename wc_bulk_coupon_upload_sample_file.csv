@@ -1,0 +1,4 @@
+Code,Product IDs,Expiry Date,Description,Usage / Limit,Coupon Amount,Coupon Type
+CouponA,"2960,2959",2025-05-30,Coupon A,1,20,Fixed Cart
+CouponB,2060,2025-05-30,Coupon B,3,50,Fixed product discount
+CouponC,2960,2025-05-30,Coupon C,1,10,Percentage discount
