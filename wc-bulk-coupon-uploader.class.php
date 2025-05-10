@@ -9,6 +9,22 @@
 
     defined( 'ABSPATH' ) or die( 'You are not allowed to access this file' );
 
+    // Check if WooCommerce is active
+    include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+
+    if (!is_plugin_active('woocommerce/woocommerce.php')) {
+        // Deactivate this plugin
+        deactivate_plugins(plugin_basename(__FILE__));
+
+        // Display admin notice
+        add_action('admin_notices', function () {
+            echo '<div class="notice notice-error"><p><strong>WC Bulk Coupon Uploader</strong> requires WooCommerce to be installed and active.</p></div>';
+        });
+
+        return;
+    }
+
+
     if( ! class_exists( 'WCBulkCouponUploader' ) ){
         class WCBulkCouponUploader{
 
